@@ -1,13 +1,23 @@
-# Freedom, Citizenship and Civil Rights – GitHub course site
+# Interactive source course – GitHub Pages package
 
-This folder contains a small static HTML learning course for Year 10 Intercultural Studies.
+This version replaces the previous static module files. Each module contains:
 
-## Files
+- a source and contextual visual;
+- vocabulary help;
+- typed-answer activities;
+- click-to-answer questions;
+- drag-and-drop ordering where appropriate;
+- a written response that saves in the learner’s browser;
+- a short end-of-module quiz;
+- automatic feedback and a completion status.
+
+## File structure
 
 ```text
-freedom-citizenship-civil-rights/
+freedom-citizenship-civil-rights-interactive/
 ├── index.html
 ├── styles.css
+├── app.js
 ├── module-1-emancipation.html
 ├── module-2-reconstruction.html
 ├── module-3-plessy.html
@@ -20,112 +30,42 @@ freedom-citizenship-civil-rights/
     └── march-on-washington.jpg
 ```
 
-## What each file does
+## How the interactivity works
 
-- `index.html` is the course homepage and links to all four modules.
-- `styles.css` contains the shared design. Edit this once to change fonts, colours or layout on every page.
-- Each `module-*.html` file is a separate student-facing module.
-- `SOURCES.md` is the mandatory source and image-rights log.
-- `images/` is where you save the selected public-domain or clearly licensed historic images.
+- `app.js` checks radio-button answers and typed key words.
+- The Reconstruction module includes drag-and-drop ordering.
+- Written responses are stored using browser `localStorage`. They remain on the same device/browser but are not sent to the teacher or GitHub.
+- A module is marked complete after a learner scores at least 2 out of 3 in its end quiz.
+- The home page shows progress from 0 to 4 completed modules.
 
-## Step 1: Create the folder structure
+## Add the four images
 
-Create a project folder named `freedom-citizenship-civil-rights`.
-
-Inside it, create a folder named `images`.
-
-Save all six HTML/CSS/Markdown files in the main project folder. Save the four image files in `images/` using exactly the file names listed above.
-
-## Step 2: Add your images legally
-
-1. Open the original institutional page listed in `SOURCES.md`.
-2. Check the image’s exact rights statement or rights advisory.
-3. Download the image only if the stated terms permit your intended school use.
-4. Rename the downloaded file exactly as required:
+1. Create an `images` folder.
+2. Download only public-domain or clearly licensed images from the original institutions.
+3. Use exactly these filenames:
    - `emancipation-proclamation.jpg`
    - `freedmens-bureau-school.jpg`
    - `segregated-railway.jpg`
    - `march-on-washington.jpg`
-5. Record the final credit, URL, creator, date and rights note in `SOURCES.md`.
+4. Document exact source, creator/date where available, source URL and rights statement in `SOURCES.md`.
 
-The HTML already points to these local files, for example:
+## Test locally
 
-```html
-<img src="images/emancipation-proclamation.jpg" alt="The Emancipation Proclamation, 1863">
-```
+Open `index.html` in a browser. Complete a quiz, then return to the home page. The progress bar should update. Refresh the page: typed reflections and completed modules should remain saved.
 
-## Step 3: Preview locally
+## Publish on GitHub Pages
 
-Double-click `index.html` to open it in a browser. All module links should work without an internet connection once the local images have been added.
+1. Create a repository on GitHub.
+2. Upload all files and the `images/` folder.
+3. Open **Settings → Pages**.
+4. Under **Build and deployment**, choose **Deploy from a branch**.
+5. Choose branch `main` and folder `/(root)`.
+6. Save and wait for the GitHub Pages URL.
 
-## Step 4: Create a GitHub repository
+## Privacy and school use
 
-1. Sign in to GitHub.
-2. Select **New repository**.
-3. Repository name: `freedom-citizenship-civil-rights`.
-4. Choose **Public** or **Private** according to your school policy.
-5. Do not upload images until you have checked their rights statements.
-6. Create the repository.
+This static site does not collect names, e-mail addresses or answers centrally. Student text remains in each browser’s local storage. Do not treat these browser-based results as formal assessment evidence without another documented method of submission.
 
-## Step 5: Upload through the GitHub website
+## Teacher option: collect student work
 
-1. In the repository, choose **Add file → Upload files**.
-2. Upload:
-   - `index.html`
-   - `styles.css`
-   - all four `module-*.html` files
-   - `SOURCES.md`
-3. Create an `images` folder by uploading the four image files into a folder called `images`.
-4. Commit the changes with a clear message, for example: `Add four-source learning course`.
-
-## Step 6: Publish with GitHub Pages
-
-1. Open the repository’s **Settings**.
-2. Open **Pages** in the sidebar.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select branch `main` and folder `/(root)`.
-5. Save.
-6. GitHub will display the public course URL after deployment.
-
-## Step 7: Check the published site
-
-Open the GitHub Pages URL and check:
-
-- all four module links work;
-- all four images load;
-- captions and credits are visible;
-- the site displays correctly on a school device;
-- print preview produces readable worksheets.
-
-## Optional changes
-
-### Add a fifth synthesis or test page
-
-Create `module-5-test.html`, then add a fifth card to `index.html`:
-
-```html
-<a class="module-card" href="module-5-test.html">
-  <span>Module 5</span>
-  <h3>Synthesis and test</h3>
-  <p>Compare the four sources and write a historical judgement.</p>
-</a>
-```
-
-### Change course colours
-
-Edit the colour values at the top of `styles.css`:
-
-```css
-:root{
-  --navy:#133b5c;
-  --gold:#bf8529;
-}
-```
-
-### Add teacher-only solutions
-
-Do not upload answer keys to a public repository if students can access it. Instead, keep a private teacher repository or save the answer key locally.
-
-## Important copyright reminder
-
-GitHub Pages makes a repository publicly available. Only upload images that you are permitted to publish online. If an image is suitable only for closed classroom use, keep the repository private or replace it with a public-domain / openly licensed alternative.
+For assessment, ask students to copy their saved written reflections into a school-approved LMS, Word document, Forms tool or learning platform. Do not add external form collection without checking GDPR / school data-protection requirements.
